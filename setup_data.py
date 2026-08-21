@@ -1,4 +1,4 @@
-from scanner import get_file_paths
+from library.scanner import get_file_paths
 from indexer.ingest import ingest_files
 from database.db import (
     init_db,

@@ -51,8 +51,8 @@ So for now, you need Python.
 #### 1. Clone the repo
 
 ```
-git clone <your-repository-url>
-cd Local-google
+git clone https://github.com/Along-the-skies/VISTARA.git
+cd VISTARA
 ```
 
 #### 2. Create a virtual environment
@@ -109,7 +109,7 @@ The scanner skips directories such as:
 * `__pycache__`
 * `.git`
 
-> ⚠️ The first scan can take some time depending on how many files are on your drives.
+> ⚠️ The first scan can take some time depending on how many files you have.
 
 ### 4. Start VISTARA
 
@@ -140,7 +140,7 @@ You may see a Hugging Face message while the model loads.
 
 That's normal.
 
-###  Local Search
+### 🔎 Local Search
 
 VISTARA uses:
 
@@ -150,7 +150,33 @@ VISTARA uses:
 
 This means you can search by both exact words and approximate meaning.
 
-###  Built With
+### 🛡️ Sensitive Content
+
+VISTARA can detect potentially sensitive files containing things such as:
+
+* Passwords
+* API keys
+* Tokens
+* Other potentially sensitive information
+
+These files can be filtered out of normal search results.
+
+If you specifically need to search them, you can turn the **sensitive filter off**.
+
+> ⚠️ This feature is meant as a safety/privacy layer, not as a guarantee that every secret will be detected.
+
+### ✨ Notable Features
+
+* Clean UI
+* Local-first search
+* Keyword + semantic search
+* Hybrid ranking
+* Sensitive content filter
+* Search snippets
+* Click a result to open the file
+* No need to remember exact filenames
+
+### 🛠️ Built With
 
 * Python
 * SQLite
@@ -163,7 +189,7 @@ This means you can search by both exact words and approximate meaning.
 * CSS
 * JavaScript
 
-###  Project Status
+### 🚀 Project Status
 
 **VISTARA is currently in its first shippable version.**
 
@@ -171,10 +197,4 @@ It's not an `.exe` yet because of the dependency size...
 
 but it works. 🗿
 
-### Notable features !!
-
-Clean UI
-Sensitive content filter (passwords,apis,tokens) and if you were searching that u can see it with sensitive filter off.
-
-
-**Vistara is alive.**
+**VISTARA is alive.**

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>VISTARA</title>
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <header>
+            <div class="logo">
+                VISTARA
+            </div>
+        </header>
+
+        <main>
+
+            <section class="hero">
+                <h1>Search your files.</h1>
+                <p>Find anything on your computer, instantly.</p>
+            </section>
+
+            <section class="search">
+                <div class="search-box">
+                    <span class="search-icon">⌕</span>
+
+                    <input
+                        type="text"
+                        placeholder="Search your files..."
+                        autocomplete="off"
+                    >
+
+                    <button>Search</button>
+                </div>
+            </section>
+
+            <section class="results">
+
+                <div class="result">
+                    <h3>test.txt</h3>
+                    <p>C:\Users\Vasudev\Documents\test.txt</p>
+                    <span class="snippet">
+                        Example search result...
+                    </span>
+                </div>
+
+                <div class="result">
+                    <h3>README.md</h3>
+                    <p>C:\Users\Vasudev\Projects\README.md</p>
+                    <span class="snippet">
+                        Example search result...
+                    </span>
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer>
+            <span>VISTARA</span>
+            <span>Local file search</span>
+        </footer>
+
+        <script src="qrc:///qtwebchannel/qwebchannel.js"></script>
+        <script src="script.js"></script>
+
+    </body>
+</html>

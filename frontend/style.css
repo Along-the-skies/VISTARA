@@ -1,0 +1,236 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #0d0d0d;
+    color: white;
+}
+
+/* Header */
+
+header {
+    padding: 24px 40px;
+
+    border-bottom: 1px solid #252525;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+/* Main */
+
+main {
+    max-width: 850px;
+
+    margin: 0 auto;
+    padding: 90px 24px 60px;
+}
+
+/* Hero */
+
+.hero {
+    text-align: center;
+
+    margin-bottom: 38px;
+}
+
+.hero h1 {
+    margin: 0 0 10px;
+
+    font-size: 42px;
+    font-weight: 600;
+    letter-spacing: -1px;
+}
+
+.hero p {
+    margin: 0;
+
+    color: #888;
+    font-size: 16px;
+}
+
+/* Search */
+
+.search {
+    width: 100%;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+
+    padding: 6px;
+
+    border: 1px solid #333;
+    border-radius: 14px;
+
+    background: #151515;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.search-box:focus-within {
+    border-color: #555;
+
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.04);
+}
+
+.search-icon {
+    padding-left: 14px;
+
+    color: #777;
+    font-size: 25px;
+}
+
+.search input {
+    flex: 1;
+
+    padding: 14px 12px;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+    color: white;
+
+    font-size: 16px;
+}
+
+.search input::placeholder {
+    color: #666;
+}
+
+.search button {
+    padding: 13px 22px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: white;
+    color: black;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease;
+}
+
+.search button:hover {
+    background: #ddd;
+}
+
+/* Results */
+
+.results {
+    margin-top: 45px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    max-height: 520px;
+    overflow-y: auto;
+
+    padding-right: 8px;
+}
+
+/* Results scrollbar */
+
+.results::-webkit-scrollbar {
+    width: 6px;
+}
+
+.results::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.results::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 10px;
+}
+
+.results::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Result card */
+
+.result {
+    padding: 18px 20px;
+
+    border: 1px solid #252525;
+    border-radius: 10px;
+
+    background: #121212;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.result:hover {
+    background: #171717;
+
+    border-color: #3d3d3d;
+
+    transform: translateY(-1px);
+}
+
+.result h3 {
+    margin: 0 0 6px;
+
+    color: #f1f1f1;
+
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.result p {
+    margin: 0 0 8px;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+.result .snippet {
+    display: block;
+
+    color: #aaa;
+
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Footer */
+
+footer {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 30px;
+
+    border-top: 1px solid #202020;
+
+    color: #666;
+
+    font-size: 13px;
+}

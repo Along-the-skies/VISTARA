@@ -47,3 +47,7 @@ dist/
 
 # PyInstaller
 __pycache__/
+
+# PyInstaller
+dist/
+build/

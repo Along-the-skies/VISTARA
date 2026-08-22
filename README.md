@@ -1,200 +1,50 @@
 # VISTARA
 
-## Local File Search Engine aka Local Google
+### Local Google 
 
-### Did you ever wonder where you saved that file? Was Explorer useful at that time?
+Ever forgot where you saved a file?
 
-Here, I made **VISTARA**, a local file search engine that can find files from that tiny bit of memory left in your brain. 🗿
+Yeah. Same.
 
-### Why?
+File explorer is not good to find files which saved like Untitled.pdf
 
-I have also come across situations like this:
+So I made **VISTARA**, a local file search engine that searches the actual content of your files.
 
-I wanted to find a PDF where I remembered typing **"Scratch readme"**, but I had apparently saved it as something like `Untitled().pdf`.
+## What it does
 
-Few months later...
+- Searches `.txt`, `.md`, `.pdf`, and `.docx`
+- SQLite + FTS5 keyword search
+- Semantic search with `sentence-transformers`
+- Document chunking
+- File change detection
+- Sensitive file detection
+- Opens files directly
 
-I got cooked. 💀
+## How it works
 
-That's where VISTARA comes in.
+```text
+Files
+ ↓
+Scanner
+ ↓
+SQLite
+ ↓
+Chunking
+ ↓
+Keyword + Semantic Search
+ ↓
+Results
 
-Instead of remembering the **exact filename**, you can search using what you remember about the file.
+## How to use 
 
-### How does it work?
+Download the zip from the github relases --> 
+extract and double click to use vistara
 
-VISTARA combines:
+NOTE :- First Run will take few minutes to setup database for ur searches (depends on ur files)
+NOTE2 :- Every time u open vistara, It will take 2-3 minutes to setup ml model,after that searching can be quick
+NOTE3 :- currently able to ingest txt,pdf,docs,md others are unable to search rn
 
-* 🔎 Keyword search
-* 🧠 Semantic search
-* ⚡ Hybrid ranking
-* 📄 File snippets
-* 📂 Direct file opening
-* 🛡️ Sensitive-file filtering
+If found a 🪲 feel free to report it
+Made for stardance Frictionless mission
 
-It searches your local files instead of sending them to some random cloud service.
-
-### Supported Files
-
-Currently VISTARA can index:
-
-* `.txt`
-* `.md`
-* `.pdf`
-* `.docx`
-
-### How to use?
-
-Currently, I am unable to package this into an `.exe` because of the dependency size.
-
-So for now, you need Python.
-
-#### 1. Clone the repo
-
-```
-git clone https://github.com/Along-the-skies/VISTARA.git
-cd VISTARA
-```
-
-#### 2. Create a virtual environment
-
-```
-python -m venv .venv
-```
-
-Activate it:
-
-```
-.\.venv\Scripts\Activate.ps1
-```
-
-#### 3. Install dependencies
-
-```
-pip install -r requirements.txt
-```
-
-### Dataset Setup
-
-Before searching, VISTARA needs to build its local search database.
-
-Run:
-
-```
-python setup_data.py
-```
-
-This will:
-
-1. Scan your available Windows drives.
-2. Find supported files.
-3. Skip system and development directories.
-4. Extract their text.
-5. Store the documents in SQLite.
-6. Create searchable chunks.
-7. Build the FTS5 search indexes.
-8. Mark sensitive files.
-
-The scanner skips directories such as:
-
-* `Windows`
-* `Program Files`
-* `Program Files (x86)`
-* `ProgramData`
-* `$Recycle.Bin`
-* `System Volume Information`
-* `.venv`
-* `venv`
-* `env`
-* `node_modules`
-* `__pycache__`
-* `.git`
-
-> ⚠️ The first scan can take some time depending on how many files you have.
-
-### 4. Start VISTARA
-
-After the dataset has been indexed:
-
-```
-python main.py
-```
-
-Wait for the UI to show up.
-
-Then search for whatever you remember.
-
-For example:
-
-* `Scratch readme`
-* `python project`
-* `school notes`
-* `that PDF about Godot`
-
-You don't necessarily need to remember the exact filename.
-
-### NOTE ⚠️
-
-The **first search after starting VISTARA can take a few minutes** because the semantic search model (`all-MiniLM-L6-v2`) needs to load.
-
-You may see a Hugging Face message while the model loads.
-
-That's normal.
-
-### 🔎 Local Search
-
-VISTARA uses:
-
-* **SQLite FTS5** for keyword search
-* **Sentence Transformers** for semantic search
-* **Hybrid ranking** to combine both
-
-This means you can search by both exact words and approximate meaning.
-
-### 🛡️ Sensitive Content
-
-VISTARA can detect potentially sensitive files containing things such as:
-
-* Passwords
-* API keys
-* Tokens
-* Other potentially sensitive information
-
-These files can be filtered out of normal search results.
-
-If you specifically need to search them, you can turn the **sensitive filter off**.
-
-> ⚠️ This feature is meant as a safety/privacy layer, not as a guarantee that every secret will be detected.
-
-### ✨ Notable Features
-
-* Clean UI
-* Local-first search
-* Keyword + semantic search
-* Hybrid ranking
-* Sensitive content filter
-* Search snippets
-* Click a result to open the file
-* No need to remember exact filenames
-
-### 🛠️ Built With
-
-* Python
-* SQLite
-* SQLite FTS5
-* Sentence Transformers
-* `all-MiniLM-L6-v2`
-* PySide6
-* QtWebEngine
-* HTML
-* CSS
-* JavaScript
-
-### 🚀 Project Status
-
-**VISTARA is currently in its first shippable version.**
-
-It's not an `.exe` yet because of the dependency size...
-
-but it works. 🗿
-
-**VISTARA is alive.**
+Made by ***Vasudev*** aka ***along-the-skies***

@@ -19,7 +19,11 @@ So I made **VISTARA**, a local file search engine that searches the actual conte
 - File change detection
 - Sensitive file detection
 - Opens files directly
+## QoL Improvements - for Shipwright/Stardance reviewer
 
+ - ***Open file directly from search*** -You can open the file directly from vistara. no need to Go to the Freaking path
+ - ***Changed file Detection*** -If a file is changed, It is treated as Changed . Not New file
+ - ***Sensitive files detection*** -To avoid exposing contents like Passwords,Api keys,Tokens and even Address of ur loved ones
 ## How it works
 
 ```text

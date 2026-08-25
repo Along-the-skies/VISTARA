@@ -124,3 +124,4 @@ def mark_sensitive_documents():
         connection.commit()
     finally:
         connection.close()
+        add_sensitive_column()

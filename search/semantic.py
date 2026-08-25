@@ -1,18 +1,10 @@
 import numpy as np
-from sentence_transformers import SentenceTransformer
+from models.all_MiniLM_L6_v2.model import model
 
-
-MODEL_NAME = "all-MiniLM-L6-v2"
-
-model = SentenceTransformer(MODEL_NAME)
 
 
 def generate_embedding(text, batch_size=32):
-    return model.encode(
-        text,
-        batch_size=batch_size,
-        show_progress_bar=False
-    )
+    return model.embed(text)
 
 
 def embedding_to_blob(embedding):
